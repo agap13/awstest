@@ -1,0 +1,27 @@
+<h1>List of announcements:</h1>
+
+<p *ngIf="!allannouncements"><em>Loading...</em></p>
+
+<table class='table' *ngIf="allannouncements">
+  <thead>
+    <tr>
+      <th>UserId</th>
+      <th>Annoucement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ua of allannouncements">
+      <td>{{ ua.userId }}</td> 
+      <td>
+    <tr *ngFor="let announcement of ua.announcements">
+      <td>
+        <img [src]="announcement.url">
+      </td>
+      <td>
+       {{ announcement.description}}
+      </td>
+    </tr>
+      </td>
+    </tr>
+  </tbody>
+</table>
